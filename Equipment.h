@@ -16,6 +16,9 @@ public:
     // Function to update the condition of the equipment
     void updateCondition(std::string newCondition);
 
+    // Function to set the availability status of the equipment
+    void setAvailabilityStatus(std::string newAvailStatus);
+
     // Function to check the availability status of the equipment
     std::string checkAvailability() const;
 
@@ -24,3 +27,4 @@ public:
 };
 
 #endif /* EQUIPMENT_H */
+
