@@ -57,19 +57,6 @@ void Farm::harvest_crop(const string& crop) {
     cout << "No " << crop << " crop to harvest." << endl;
 }
 
-// Function to buy a farm plot
-void Farm::buy_farm_plot(int num_plots) {
-    // Calculate the cost of the plots
-    float cost = num_plots * 500;
-    if (available_funds >= cost) {
-        farm_size += num_plots; 
-        available_funds -= cost;
-        cout << "Bought " << num_plots << " new plots. Total plots: " << farm_size << endl;
-    } else {
-        cout << "Not enough funds to buy " << num_plots << " plots." << endl;
-    }
-}
-
 // Function to print the farm status
 void Farm::print_farm_status(){
     cout << "Farm size: " << farm_size << endl; // Print the farm size

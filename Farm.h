@@ -25,7 +25,6 @@ class Farm {
 
         void plant_crop(const string& crop);// function to plant a crop
         void harvest_crop(const string& crop); // function to harvest a crop
-        void buy_farm_plot(int num_plots); // function to buy a farm plot
         void print_farm_status(); // function to print the farm status
 };
 
