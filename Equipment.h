@@ -5,17 +5,21 @@
 
 class Equipment {
 private:
-    std::string type;
-    std::string condition;
-    std::string availabilityStatus;
+    std::string type;               // Type of equipment (e.g., tractor, plow, harvester)
+    std::string condition;          // Condition of the equipment (e.g., new, used, damaged)
+    std::string availabilityStatus; // Availability status of the equipment (e.g., available, rented, under repair)
 
 public:
+    // Constructor to initialize equipment attributes
     Equipment(std::string equipType, std::string equipCondition, std::string availStatus);
 
+    // Function to update the condition of the equipment
     void updateCondition(std::string newCondition);
 
+    // Function to check the availability status of the equipment
     std::string checkAvailability() const;
 
+    // Function to display all details of the equipment
     void displayDetails() const;
 };
 
