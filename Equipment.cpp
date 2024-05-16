@@ -10,6 +10,11 @@ void Equipment::updateCondition(std::string newCondition) {
     condition = newCondition;
 }
 
+// Function to set the availability status of the equipment
+void Equipment::setAvailabilityStatus(std::string newAvailStatus) {
+    availabilityStatus = newAvailStatus;
+}
+
 // Function to check the availability status of the equipment
 std::string Equipment::checkAvailability() const {
     return availabilityStatus;
