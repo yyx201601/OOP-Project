@@ -20,9 +20,15 @@ std::string Equipment::checkAvailability() const {
     return availabilityStatus;
 }
 
+// Function to get the type of the equipment
+std::string Equipment::getType() const {
+    return type;
+}
+
 // Function to display all details of the equipment
 void Equipment::displayDetails() const {
     std::cout << "Type: " << type << std::endl;
     std::cout << "Condition: " << condition << std::endl;
     std::cout << "Availability: " << availabilityStatus << std::endl;
 }
+
