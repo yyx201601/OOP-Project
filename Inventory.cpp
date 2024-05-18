@@ -33,3 +33,47 @@ void Inventory::displayInventory() const {
         }
     }
 }
+
+// Function to purchase new equipment
+void Inventory::purchaseEquipment() {
+    std::string type, condition, availabilityStatus;
+
+    // Gather input from the user for new equipment details
+    std::cout << "Enter equipment type: ";
+    std::cin >> type;
+    std::cout << "Enter equipment condition (new/used/damaged): ";
+    std::cin >> condition;
+    std::cout << "Enter equipment availability status (available/rented/under repair): ";
+    std::cin >> availabilityStatus;
+
+    // Create a new Equipment object with the input details
+    Equipment newEquipment(type, condition, availabilityStatus);
+
+    // Add the new equipment to the inventory
+    addEquipment(newEquipment);
+
+    std::cout << "Equipment purchased and added to inventory." << std::endl;
+}
+
+// Function to sell equipment
+void Inventory::sellEquipment() {
+    int index;
+
+    // Display inventory first
+    displayInventory();
+
+    // Get the index of the equipment to be sold from the user
+    std::cout << "Enter the index of the equipment to sell: ";
+    std::cin >> index;
+
+    // Adjust index for zero-based vector index
+    index--;
+
+    // Remove the equipment from the inventory if the index is valid
+    if (index >= 0 && index < equipmentList.size()) {
+        removeEquipment(index);
+        std::cout << "Equipment sold and removed from inventory." << std::endl;
+    } else {
+        std::cout << "Invalid index. No equipment sold." << std::endl;
+    }
+}
