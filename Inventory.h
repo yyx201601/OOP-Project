@@ -28,6 +28,12 @@ public:
 
     // Function to sell equipment
     void sellEquipment();
+
+    // Function to list all available equipment
+    void listAvailableEquipment() const;
+
+    // Function to find specific equipment by type
+    void findEquipmentByType(const std::string& type) const;
 };
 
 #endif /* INVENTORY_H */
