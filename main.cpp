@@ -1,34 +1,39 @@
-#include <iostream>
-#include "Inventory.h"
+#ifndef INVENTORY_H
+#define INVENTORY_H
 
-int main() {
-    Inventory inventory;
-    int choice;
+#include <vector>
+#include "Equipment.h"
 
-    while (true) {
-        std::cout << "1. Purchase Equipment" << std::endl;
-        std::cout << "2. Sell Equipment" << std::endl;
-        std::cout << "3. Display Inventory" << std::endl;
-        std::cout << "4. Exit" << std::endl;
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
+class Inventory {
+private:
+    std::vector<Equipment> equipmentList; // Vector to store Equipment objects
 
-        switch (choice) {
-            case 1:
-                inventory.purchaseEquipment();
-                break;
-            case 2:
-                inventory.sellEquipment();
-                break;
-            case 3:
-                inventory.displayInventory();
-                break;
-            case 4:
-                return 0;
-            default:
-                std::cout << "Invalid choice. Please try again." << std::endl;
-        }
-    }
+public:
+    Inventory() {} // Constructor
 
-    return 0;
-}
+    // Function to add equipment to the inventory (purchase)
+    void addEquipment(const Equipment& newEquipment);
+
+    // Function to remove equipment from the inventory (sell)
+    void removeEquipment(int index);
+
+    // Function to update equipment details
+    void updateEquipment(int index, const std::string& newCondition, const std::string& newAvailStatus);
+
+    // Function to display inventory
+    void displayInventory() const;
+
+    // Function to purchase new equipment
+    void purchaseEquipment();
+
+    // Function to sell equipment
+    void sellEquipment();
+
+    // Function to list all available equipment
+    void listAvailableEquipment() const;
+
+    // Function to find specific equipment by type
+    void findEquipmentByType(const std::string& type) const;
+};
+
+#endif /* INVENTORY_H */
