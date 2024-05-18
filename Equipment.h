@@ -22,9 +22,11 @@ public:
     // Function to check the availability status of the equipment
     std::string checkAvailability() const;
 
+    // Function to get the type of the equipment
+    std::string getType() const;
+
     // Function to display all details of the equipment
     void displayDetails() const;
 };
 
 #endif /* EQUIPMENT_H */
-
