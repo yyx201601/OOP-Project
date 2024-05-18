@@ -77,3 +77,31 @@ void Inventory::sellEquipment() {
         std::cout << "Invalid index. No equipment sold." << std::endl;
     }
 }
+
+// Function to list all available equipment
+void Inventory::listAvailableEquipment() const {
+    bool availableFound = false;
+    for (const auto& equip : equipmentList) {
+        if (equip.checkAvailability() == "available") {
+            equip.displayDetails();
+            availableFound = true;
+        }
+    }
+    if (!availableFound) {
+        std::cout << "No available equipment found." << std::endl;
+    }
+}
+
+// Function to find specific equipment by type
+void Inventory::findEquipmentByType(const std::string& type) const {
+    bool typeFound = false;
+    for (const auto& equip : equipmentList) {
+        if (equip.getType() == type) {
+            equip.displayDetails();
+            typeFound = true;
+        }
+    }
+    if (!typeFound) {
+        std::cout << "No equipment of type " << type << " found." << std::endl;
+    }
+}
