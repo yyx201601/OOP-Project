@@ -11,10 +11,10 @@ private:
 public:
     Inventory() {} // Constructor
 
-    // Function to add equipment to the inventory
+    // Function to add equipment to the inventory (purchase)
     void addEquipment(const Equipment& newEquipment);
 
-    // Function to remove equipment from the inventory
+    // Function to remove equipment from the inventory (sell)
     void removeEquipment(int index);
 
     // Function to update equipment details
@@ -22,6 +22,12 @@ public:
 
     // Function to display inventory
     void displayInventory() const;
+
+    // Function to purchase new equipment
+    void purchaseEquipment();
+
+    // Function to sell equipment
+    void sellEquipment();
 };
 
 #endif /* INVENTORY_H */
